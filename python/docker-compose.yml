@@ -1,0 +1,7 @@
+services:
+  scripts:
+    container_name: test
+    build:
+      context: ./
+    volumes:
+      - ./:/app
