@@ -1,15 +1,9 @@
-install:
-	docker compose build --no-cache
-
 run:
-	docker compose run go /application
+	docker compose run --rm go sh -c 'go run .'
 
-run-raw:
-	docker compose run go sh -c 'go run .'
-
-compile:
-	docker compose build
+test:
+	docker compose run --rm go sh -c 'go run .'
 
 update:
 	docker compose build
-	docker compose run go sh -c 'go mod tidy'
+	docker compose run --rm go sh -c 'go mod tidy'

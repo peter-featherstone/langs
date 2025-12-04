@@ -1,0 +1,7 @@
+services:
+  assembly:
+    image: esolang/x86asm-nasm
+    platform: linux/amd64
+    working_dir: /app
+    volumes:
+      - ./:/app

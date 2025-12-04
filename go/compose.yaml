@@ -1,0 +1,6 @@
+services:
+  go:
+    image: golang:1.22-alpine
+    working_dir: /app
+    volumes:
+      - ./src:/app

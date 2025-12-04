@@ -1,9 +1,9 @@
 run:
-	docker compose run --no-deps scripts sh -c 'python3 main.py'
+	docker compose run --rm python sh -c 'python3 main.py'
 
-install:
-	docker compose build --no-cache
+test:
+	docker compose run --rm python sh -c 'pytest'
 
 update:
-	docker compose run --no-deps scripts sh -c 'uv pip compile --no-cache requirements.in' > requirements.txt
+	docker compose run --rm python sh -c 'uv pip compile --no-cache requirements.in' > requirements.txt
 	docker compose build
