@@ -1,0 +1,7 @@
+services:
+  zig:
+    build: .
+    platform: linux/arm64
+    working_dir: /app
+    volumes:
+      - ./:/app

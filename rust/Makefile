@@ -2,20 +2,13 @@ install:
 	docker compose build --no-cache
 
 run:
-	docker compose run rust sh -c 'cargo run .'
+	docker compose run --rm rust sh -c 'cargo run .'
 
 compile:
-	docker compose run rust sh -c 'cargo build'
+	docker compose run --rm rust sh -c 'cargo build'
 
-format:
-	docker compose run rust sh -c 'cargo fmt'
-
-check:
-	docker compose run rust sh -c 'cargo check'
+test:
+	docker compose run --rm rust sh -c 'cargo test'
 
 update:
-	docker compose build
-	docker compose run rust sh -c 'cargo update'
-
-docs:
-	cargo doc --open
+	docker compose run --rm rust sh -c 'cargo update'

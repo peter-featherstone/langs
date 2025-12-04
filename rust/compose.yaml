@@ -1,0 +1,6 @@
+services:
+  rust:
+    image: rust:1.77-alpine
+    working_dir: /app
+    volumes:
+      - ./:/app
